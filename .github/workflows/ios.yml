@@ -14,6 +14,9 @@ jobs:
       - name: Link Dev
         run:  printf "KEY = VALUE" > ./test_config.xcconfig
 
+      - name: Show Me
+        run:  ls -al
+
       - name: Checkout
         uses: actions/checkout@v2
 
