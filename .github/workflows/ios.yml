@@ -12,7 +12,7 @@ jobs:
     steps:
 
       - name: Link Dev
-        run: touch test_config.xcconfig
+        run:  printf "KEY = VALUE" > ./test_config.txt
 
       - name: Checkout
         uses: actions/checkout@v2

@@ -2,7 +2,7 @@
 
 
 
-#touch test_config.xcconfig
+touch test_config.xcconfig
 #"KEY = VALUE" > test_config.xcconfig
 
 echo 'Run Tests'
