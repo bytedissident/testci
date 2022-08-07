@@ -1,0 +1,25 @@
+name: iOS Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches:
+      - '*'
+jobs:
+  Tests:
+    runs-on: macos-latest
+    steps:
+
+      - name: Link Dev
+        run: touch ./test_config.xcconfig
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Bundle install
+        run: bundle install
+       
+      - name: Tests
+        run: bundle exec fastlane tests
+

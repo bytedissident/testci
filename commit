@@ -1,0 +1,9 @@
+#!/bin/zsch
+
+
+
+#touch test_config.xcconfig
+#"KEY = VALUE" > test_config.xcconfig
+
+echo 'Run Tests'
+bundle exec fastlane tests
