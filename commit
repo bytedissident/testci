@@ -1,0 +1,10 @@
+#!/bin/zsch
+
+
+
+ printf "KEY = VALUE" > ./test_config.xcconfig
+ chmod 0 ./test_config.xcconfig
+#"KEY = VALUE" > test_config.xcconfig
+
+echo 'Run Tests'
+bundle exec fastlane tests

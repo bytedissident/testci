@@ -1,0 +1,30 @@
+name: iOS Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches:
+      - '*'
+jobs:
+  Tests:
+    runs-on: macos-latest
+    steps:
+
+      - name: Show Me
+        run:  ls -al
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Link Dev
+        run:  printf "KEY = VALUE" > ./test_config.xcconfig
+
+      - name: Bundle install
+        run: bundle install
+       
+      - name: Tests
+        run: bundle exec fastlane tests
+
+      - name: Clean
+        run: rm -R output/*

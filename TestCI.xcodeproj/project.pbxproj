@@ -44,6 +44,8 @@
 		872740C028A03C4E00A21B7D /* TestCIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		872740C428A03C4E00A21B7D /* TestCIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCIUITests.swift; sourceTree = "<group>"; };
 		872740C628A03C4E00A21B7D /* TestCIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		872740D328A03C5C00A21B7D /* test_config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = test_config.xcconfig; sourceTree = "<group>"; };
+		872740D428A03C6E00A21B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		8727409D28A03C4D00A21B7D = {
 			isa = PBXGroup;
 			children = (
+				872740D328A03C5C00A21B7D /* test_config.xcconfig */,
 				872740A828A03C4D00A21B7D /* TestCI */,
 				872740B928A03C4E00A21B7D /* TestCITests */,
 				872740C328A03C4E00A21B7D /* TestCIUITests */,
@@ -94,6 +97,7 @@
 		872740A828A03C4D00A21B7D /* TestCI */ = {
 			isa = PBXGroup;
 			children = (
+				872740D428A03C6E00A21B7D /* Info.plist */,
 				872740A928A03C4D00A21B7D /* TestCIApp.swift */,
 				872740AB28A03C4D00A21B7D /* ContentView.swift */,
 				872740AD28A03C4E00A21B7D /* Assets.xcassets */,
@@ -134,6 +138,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 872740CA28A03C4E00A21B7D /* Build configuration list for PBXNativeTarget "TestCI" */;
 			buildPhases = (
+				872740D528A03D4200A21B7D /* ShellScript */,
 				872740A228A03C4D00A21B7D /* Sources */,
 				872740A328A03C4D00A21B7D /* Frameworks */,
 				872740A428A03C4D00A21B7D /* Resources */,
@@ -252,6 +257,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		872740D528A03D4200A21B7D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "#touch test_config.xcconfig\n#\"KEY = VALUE\" > test_config.xcconfig\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		872740A228A03C4D00A21B7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -345,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -411,6 +437,7 @@
 		};
 		872740CB28A03C4E00A21B7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 872740D328A03C5C00A21B7D /* test_config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -420,11 +447,13 @@
 				DEVELOPMENT_TEAM = 4PJ599J3S6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestCI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,11 +478,13 @@
 				DEVELOPMENT_TEAM = 4PJ599J3S6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestCI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
