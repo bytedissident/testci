@@ -23,3 +23,5 @@ jobs:
       - name: Tests
         run: bundle exec fastlane tests
 
+      - name: Clean
+        run: rm -R output/*
