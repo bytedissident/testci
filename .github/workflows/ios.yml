@@ -12,7 +12,7 @@ jobs:
     steps:
 
       - name: Link Dev
-        run: touch ./test_config.xcconfig
+        run: touch test_config.xcconfig
 
       - name: Checkout
         uses: actions/checkout@v2
